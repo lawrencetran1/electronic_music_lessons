@@ -25,7 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'fog'
+gem 'fog', '1.29.0'
 gem 'bcrypt'
 gem 'figaro'
 gem 'bootstrap-sass'
