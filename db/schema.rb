@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150502210516) do
+ActiveRecord::Schema.define(version: 20150502222607) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20150502210516) do
 
   create_table "lessons", force: :cascade do |t|
     t.string   "name"
-    t.string   "type"
+    t.string   "category"
     t.string   "body"
     t.string   "picture"
     t.integer  "tutorial_id"
@@ -49,15 +49,15 @@ ActiveRecord::Schema.define(version: 20150502210516) do
 
   add_index "lessons", ["tutorial_id"], name: "index_lessons_on_tutorial_id", using: :btree
 
-  create_table "progesses", force: :cascade do |t|
+  create_table "trackers", force: :cascade do |t|
     t.boolean  "completed"
-    t.integer  "status_id"
-    t.string   "status_type"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "trackable_id"
+    t.string   "trackable_type"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
-  add_index "progesses", ["status_type", "status_id"], name: "index_progesses_on_status_type_and_status_id", using: :btree
+  add_index "trackers", ["trackable_type", "trackable_id"], name: "index_trackers_on_trackable_type_and_trackable_id", using: :btree
 
   create_table "tutorials", force: :cascade do |t|
     t.string   "name"
