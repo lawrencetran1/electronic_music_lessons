@@ -4,8 +4,7 @@ class CreateTutorials < ActiveRecord::Migration
       t.string :name
       t.string :description
       t.string :category
-      t.integer :rating
-
+      
       t.timestamps null: false
     end
   end

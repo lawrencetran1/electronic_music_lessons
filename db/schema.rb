@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150501235418) do
+ActiveRecord::Schema.define(version: 20150502210516) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,16 @@ ActiveRecord::Schema.define(version: 20150501235418) do
   add_index "comments", ["tutorial_id"], name: "index_comments_on_tutorial_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
+  create_table "identities", force: :cascade do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
   create_table "lessons", force: :cascade do |t|
     t.string   "name"
     t.string   "type"
@@ -39,11 +49,20 @@ ActiveRecord::Schema.define(version: 20150501235418) do
 
   add_index "lessons", ["tutorial_id"], name: "index_lessons_on_tutorial_id", using: :btree
 
+  create_table "progesses", force: :cascade do |t|
+    t.boolean  "completed"
+    t.integer  "status_id"
+    t.string   "status_type"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "progesses", ["status_type", "status_id"], name: "index_progesses_on_status_type_and_status_id", using: :btree
+
   create_table "tutorials", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
     t.string   "category"
-    t.integer  "rating"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "user_id"
@@ -60,8 +79,7 @@ ActiveRecord::Schema.define(version: 20150501235418) do
   add_index "tutorials_users", ["user_id"], name: "index_tutorials_users_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "name"
     t.string   "email"
     t.string   "password_digest"
     t.datetime "created_at",      null: false
