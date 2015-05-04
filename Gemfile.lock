@@ -319,7 +319,7 @@ DEPENDENCIES
   omniauth
   omniauth-facebook
   omniauth-google-oauth2
-  pg
+  pg (= 0.18.1)
   pry-rails
   rails (= 4.2.1)
   rails_12factor
