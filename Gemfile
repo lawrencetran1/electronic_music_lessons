@@ -22,6 +22,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-identity'
 gem 'koala'
 
+gem 'materialize-sass'
 
 group :development, :test do
   gem 'byebug'
