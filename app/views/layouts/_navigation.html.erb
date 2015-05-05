@@ -1,0 +1,17 @@
+<!-- Navigation bar partial -->
+<h1>Navigation</h1>
+<div>
+  <% if current_user %>
+    <span>You are signed in as </span>
+    <span><%= current_user.name %></span>
+    <%= link_to "Sign out", signout_path %>
+  <% else %>
+    <%= link_to "Sign in with Facebook", '/auth/facebook' %>
+  <% end %>
+</div>
+
+<p>
+  <strong>Don't have Facebook?</strong>
+  <%= link_to "Create an account", "/auth/identity/register" %> or
+  <%= link_to "login", "/auth/identity" %> with a password.
+</p>

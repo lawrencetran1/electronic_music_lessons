@@ -8,7 +8,19 @@
 </head>
 <body>
 
-<%= yield %>
+    <header>
+      <!-- Render navigation bar on all pages -->
+      <%= render 'layouts/navigation' %>
+    </header>
 
-</body>
+
+    <main role="main">
+       <%= yield %>       
+    </main>
+
+
+    <!-- Render footer on all pages -->
+    <%= render 'layouts/footer' %>
+
+  </body>
 </html>
