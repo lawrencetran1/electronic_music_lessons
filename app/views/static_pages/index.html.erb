@@ -5,6 +5,11 @@
 		<%= link_to "Sign out", signout_path %>
 	<% else %>
 		<%= link_to "Sign in with Facebook", '/auth/facebook' %>
-		<%= link_to "Sign in with Google", '/auth/google_oauth2' %>
 	<% end %>
 </div>
+
+<p>
+	<strong>Don't have Facebook?</strong>
+	<%= link_to "Create an account", "/auth/identity/register" %> or
+	<%= link_to "login", "/auth/identity" %> with a password.
+</p>
