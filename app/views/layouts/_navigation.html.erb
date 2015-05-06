@@ -1,17 +1,15 @@
 <!-- Navigation bar partial -->
-<h1>Navigation</h1>
-<div>
-  <% if current_user %>
-    <span>You are signed in as </span>
-    <span><%= current_user.name %></span>
-    <%= link_to "Sign out", signout_path %>
-  <% else %>
-    <%= link_to "Sign in with Facebook", '/auth/facebook' %>
-  <% end %>
-</div>
+<nav>
+    <div class="nav-wrapper teal">
+      <a href="#" class="brand-logo">eMusic Lessons</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <% if current_user %>
+        <li><span>Signed in as </span><span><%= current_user.name %></span></li>
+        <li><%= link_to "Sign out", signout_path %></li>
+        <% else %>
+        <%= link_to "Sign in with Facebook", "/auth/facebook" %>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
 
-<p>
-  <strong>Don't have Facebook?</strong>
-  <%= link_to "Create an account", "/auth/identity/register" %> or
-  <%= link_to "login", "/auth/identity" %> with a password.
-</p>
