@@ -1,9 +1,10 @@
 class User < ActiveRecord::Base
+		has_secure_password
 
-    has_many :tutorials
-    has_many :lessons, through: :tutorials
     has_many :comments
-    has_many :identities
+    has_many :tutorials
+    has_many :completed_lessons
+    has_many :lessons, through: :completed_lessons
 
 	def self.from_omniauth(auth)
 		where({:provider => auth['provider'], :uid => auth['uid']}).first_or_initialize.tap do |user|

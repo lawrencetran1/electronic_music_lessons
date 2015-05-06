@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150505024658) do
+ActiveRecord::Schema.define(version: 20150506020715) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,16 +27,16 @@ ActiveRecord::Schema.define(version: 20150505024658) do
   add_index "comments", ["tutorial_id"], name: "index_comments_on_tutorial_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
-  create_table "identities", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "password_digest"
+  create_table "completed_lessons", force: :cascade do |t|
+    t.datetime "completed_date"
+    t.integer  "lesson_id"
     t.integer  "user_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
-  add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
+  add_index "completed_lessons", ["lesson_id"], name: "index_completed_lessons_on_lesson_id", using: :btree
+  add_index "completed_lessons", ["user_id"], name: "index_completed_lessons_on_user_id", using: :btree
 
   create_table "lessons", force: :cascade do |t|
     t.string   "name"
@@ -49,14 +49,6 @@ ActiveRecord::Schema.define(version: 20150505024658) do
   end
 
   add_index "lessons", ["tutorial_id"], name: "index_lessons_on_tutorial_id", using: :btree
-
-  create_table "lessons_users", id: false, force: :cascade do |t|
-    t.integer "lesson_id"
-    t.integer "user_id"
-  end
-
-  add_index "lessons_users", ["lesson_id"], name: "index_lessons_users_on_lesson_id", using: :btree
-  add_index "lessons_users", ["user_id"], name: "index_lessons_users_on_user_id", using: :btree
 
   create_table "tutorials", force: :cascade do |t|
     t.string   "name"
@@ -73,6 +65,8 @@ ActiveRecord::Schema.define(version: 20150505024658) do
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
+    t.string   "email"
+    t.string   "password_digest"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
     t.datetime "created_at",       null: false
@@ -81,6 +75,8 @@ ActiveRecord::Schema.define(version: 20150505024658) do
 
   add_foreign_key "comments", "tutorials"
   add_foreign_key "comments", "users"
+  add_foreign_key "completed_lessons", "lessons"
+  add_foreign_key "completed_lessons", "users"
   add_foreign_key "lessons", "tutorials"
   add_foreign_key "tutorials", "users"
 end

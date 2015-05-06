@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class IdentityTest < ActiveSupport::TestCase
+class CompletedLessonTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
