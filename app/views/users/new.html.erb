@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row"></div>
+  <div class="row"></div>
+  <div class="row"></div>
+  <div class="row"></div>
+  <div class="row">
+      <%= form_for @user do |f| %>
+        <div class="row">
+          <div class="input-field col s6">
+            <i class="mdi-action-account-circle prefix"></i>
+            <%= f.text_field :first_name, class: "validate" %>
+            <label for="first_name">First Name</label>
+          </div>
+          <div class="input-field col s6">
+          <i class="mdi-action-account-circle prefix"></i>
+            <%= f.text_field :last_name, class: "validate" %>
+            <label for="last_name">Last Name</label>
+          </div>
+        </div>      
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="mdi-communication-email prefix"></i>
+            <%= f.text_field :email, class: "validate" %>
+            <label for="email">Email</label>
+          </div>
+        </div>   
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="mdi-action-https prefix"></i>
+            <%= f.password_field :password, class: "validate" %>
+            <label for="password">Password</label>
+          </div>
+        </div>
+        <div class="container">
+          <%= f.submit "Sign Up!", class: "btn-large blue" %> 
+        </div>
+      <% end %>
+    </div>
+    <div class="row"></div>
+    <div class="row"></div> 
+    <div class="row"></div>
+</div>
