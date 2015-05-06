@@ -28,14 +28,15 @@ ActiveRecord::Schema.define(version: 20150505024658) do
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "identities", force: :cascade do |t|
-    t.string   "provider"
-    t.string   "uid"
     t.string   "name"
-    t.string   "oauth_token"
-    t.datetime "oauth_expires_at"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.string   "email"
+    t.string   "password_digest"
+    t.integer  "user_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
+
+  add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
 
   create_table "lessons", force: :cascade do |t|
     t.string   "name"
@@ -57,16 +58,6 @@ ActiveRecord::Schema.define(version: 20150505024658) do
   add_index "lessons_users", ["lesson_id"], name: "index_lessons_users_on_lesson_id", using: :btree
   add_index "lessons_users", ["user_id"], name: "index_lessons_users_on_user_id", using: :btree
 
-  create_table "trackers", force: :cascade do |t|
-    t.boolean  "completed"
-    t.integer  "trackable_id"
-    t.string   "trackable_type"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-  end
-
-  add_index "trackers", ["trackable_type", "trackable_id"], name: "index_trackers_on_trackable_type_and_trackable_id", using: :btree
-
   create_table "tutorials", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
@@ -78,20 +69,14 @@ ActiveRecord::Schema.define(version: 20150505024658) do
 
   add_index "tutorials", ["user_id"], name: "index_tutorials_on_user_id", using: :btree
 
-  create_table "tutorials_users", id: false, force: :cascade do |t|
-    t.integer "tutorial_id"
-    t.integer "user_id"
-  end
-
-  add_index "tutorials_users", ["tutorial_id"], name: "index_tutorials_users_on_tutorial_id", using: :btree
-  add_index "tutorials_users", ["user_id"], name: "index_tutorials_users_on_user_id", using: :btree
-
   create_table "users", force: :cascade do |t|
+    t.string   "provider"
+    t.string   "uid"
     t.string   "name"
-    t.string   "email"
-    t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   add_foreign_key "comments", "tutorials"

@@ -4,14 +4,14 @@ module Api
 
     def index 
       tutorials = Tutorial.all
-      render json: tutorials, only: [:name, :id, :description]
+      render json: tutorials, only: [:name, :description,:category]
 
     end
 
     def show
       tutorial = Tutorial.find(params[:id])
       render json: tutorial, except: [:created_at, :updated_at], 
-      include: {lessons:{only: :name, :description}}
+      include: :lessons
     end
   end
 end 
