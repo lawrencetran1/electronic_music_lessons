@@ -5,6 +5,7 @@
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <% if current_user %>
         <li><span>Signed in as </span><span><%= current_user.name %></span></li>
+        <li><img src=<%= current_user.image %>></li>
         <li><%= link_to "Sign out", signout_path %></li>
         <% else %>
         <%= link_to "Sign in with Facebook", "/auth/facebook" %>
