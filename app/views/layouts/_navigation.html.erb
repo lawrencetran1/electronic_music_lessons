@@ -1,11 +1,11 @@
 <!-- Navigation bar partial -->
 <nav>
     <div class="nav-wrapper teal">
-      <a href="#" class="brand-logo">eMusic Lessons</a>
+      <div class="row">
+      <a href="#" id="title" class="brand-logo">eMusic Lessons</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <% if current_user %>
         <li><span>Signed in as </span><span><%= current_user.first_name.titlecase %></span></li>
-        <li><img src=<%= current_user.image %>></li>
         <li><%= link_to "Sign out", signout_path %></li>
         <% else %>
         <li><%= link_to "Facebook Login", "/auth/facebook" %></li>
@@ -13,6 +13,8 @@
         <li><%= link_to "Sign Up", new_user_path %></li>
         <% end %>
       </ul>
+      <img id="profile" class="circle responsive-img right" src=<%= current_user.image %>>
+      </div>
     </div>
   </nav>
 
