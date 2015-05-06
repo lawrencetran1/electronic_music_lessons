@@ -6,6 +6,12 @@ class User < ActiveRecord::Base
     has_many :completed_lessons
     has_many :lessons, through: :completed_lessons
 
+		# Checks if email exists and if email format is correct
+		validates :email, presence: true, uniqueness: { case_sensitive: false }, format: {with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i}
+
+		# Checks if password is between 6 and 20 characters long
+		validates :password, presence: true, length: { in: 6..20 }    
+
 	def self.from_omniauth(auth)
 		where({:provider => auth['provider'], :uid => auth['uid']}).first_or_initialize.tap do |user|
 			user.provider = auth['provider']
