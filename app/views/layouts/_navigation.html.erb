@@ -4,11 +4,13 @@
       <a href="#" class="brand-logo">eMusic Lessons</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <% if current_user %>
-        <li><span>Signed in as </span><span><%= current_user.name %></span></li>
+        <li><span>Signed in as </span><span><%= current_user.first_name.titlecase %></span></li>
         <li><img src=<%= current_user.image %>></li>
         <li><%= link_to "Sign out", signout_path %></li>
         <% else %>
-        <%= link_to "Sign in with Facebook", "/auth/facebook" %>
+        <li><%= link_to "Facebook Login", "/auth/facebook" %></li>
+        <li><%= link_to "Email Login", "/login" %></li>
+        <li><%= link_to "Sign Up", new_user_path %></li>
         <% end %>
       </ul>
     </div>
