@@ -1,8 +1,8 @@
-# User.create!([
-#   {name: "AudioPro", email: "audiopro@audiopro.com", password_digest: "$2a$10$XBq4qaJY2Da85vmMYy8BGeDioAgAdYY9T2EywGfWFQR4gXz3wy6e2"},
-#   {name: "MrSynth", email: "mrsynth@mrsynth.com", password_digest: "mrsynth"},
-#   {name: "DJAwesome", email: "djawesome@awesome.com", password_digest: "awesome"},
-# ])
+User.create!([
+  {first_name: "Audio", last_name:"Pro", email: "audiopro@audiopro.com", password: "new"},
+  {first_name: "Mr", last_name:"Synth",email: "mrsynth@mrsynth.com", password: "new"},
+  {first_name: "DJ", last_name:"Awesome", email: "djawesome@awesome.com", password: "new"},
+])
 
 Tutorial.create!([
   {name: "How EQs Work", description: "Here is a quick introduction to equalizers and how to utilize them in your next music production.", category: "Audio Production"},
