@@ -1,0 +1,40 @@
+
+
+    <div class="row">
+      <!-- <form class="col s12"> -->
+      <%= form_for @tutorial do |f| %>
+        <div class="row">
+          <div class="input-field col s6">
+            <%= f.text_field :category %>
+            <label for="input_text">Category</label>
+          </div>
+          <div class="input-field col s6">
+            <!-- <input id="input_text" type="text" length="10"> -->
+            <%=f.text_field :name %>
+            <label for="input_text">Name</label>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="input-field col s12">
+           <!--  <textarea id="textarea1" class="materialize-textarea" length="120"></textarea> -->
+           <%= f.text_area :description %>
+            <label for="textarea1"></label>
+
+
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="mdi-content-send right"></i>
+  </button>
+
+        <a class="waves-effect waves-light btn">Cancel</a>
+          </div>
+        </div>
+      <!-- </form> -->
+      <% end %>
+    </div>
+
+
+
+
+<!-- the fields are name, description, category -->
