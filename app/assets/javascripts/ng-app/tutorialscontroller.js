@@ -1,12 +1,12 @@
 (function(){
   angular
-    .module('emlApp')
+    .module('emlApp',['ngResource'])
     .controller('TutorialsController', TutorialsController);
 
-    TutorialsController.$inject = ['$http'];
+    TutorialsController.$inject = ['$http','$resource'];
 
-    function TutorialsController($http){
-      
+    function TutorialsController($http, $resource){
+      var tutorial = $resource('/api/tutorials/:id',{id:'@id'});
       // capture variable
       var self = this;
       // Create a promise - asynchronis
@@ -20,4 +20,6 @@
       });
 
       }
+
+
 }());
