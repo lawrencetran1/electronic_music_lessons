@@ -38,9 +38,19 @@ ActiveRecord::Schema.define(version: 20150506020715) do
   add_index "completed_lessons", ["lesson_id"], name: "index_completed_lessons_on_lesson_id", using: :btree
   add_index "completed_lessons", ["user_id"], name: "index_completed_lessons_on_user_id", using: :btree
 
+  create_table "identities", force: :cascade do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
   create_table "lessons", force: :cascade do |t|
     t.string   "name"
-    t.string   "category"
+    t.string   "type"
     t.string   "body"
     t.string   "picture"
     t.integer  "tutorial_id"
@@ -50,11 +60,28 @@ ActiveRecord::Schema.define(version: 20150506020715) do
 
   add_index "lessons", ["tutorial_id"], name: "index_lessons_on_tutorial_id", using: :btree
 
+  create_table "lessons_users", id: false, force: :cascade do |t|
+    t.integer "lesson_id"
+    t.integer "user_id"
+  end
+
+  add_index "lessons_users", ["lesson_id"], name: "index_lessons_users_on_lesson_id", using: :btree
+  add_index "lessons_users", ["user_id"], name: "index_lessons_users_on_user_id", using: :btree
+
+  create_table "progesses", force: :cascade do |t|
+    t.boolean  "completed"
+    t.integer  "status_id"
+    t.string   "status_type"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "progesses", ["status_type", "status_id"], name: "index_progesses_on_status_type_and_status_id", using: :btree
+
   create_table "tutorials", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
     t.string   "category"
-    t.string   "picture"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "user_id"
@@ -62,19 +89,20 @@ ActiveRecord::Schema.define(version: 20150506020715) do
 
   add_index "tutorials", ["user_id"], name: "index_tutorials_on_user_id", using: :btree
 
+  create_table "tutorials_users", id: false, force: :cascade do |t|
+    t.integer "tutorial_id"
+    t.integer "user_id"
+  end
+
+  add_index "tutorials_users", ["tutorial_id"], name: "index_tutorials_users_on_tutorial_id", using: :btree
+  add_index "tutorials_users", ["user_id"], name: "index_tutorials_users_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
-    t.string   "provider"
-    t.string   "uid"
     t.string   "name"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "image"
     t.string   "email"
     t.string   "password_digest"
-    t.string   "oauth_token"
-    t.datetime "oauth_expires_at"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   add_foreign_key "comments", "tutorials"
