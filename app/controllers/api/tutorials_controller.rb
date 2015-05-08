@@ -4,7 +4,7 @@ module Api
 
     def index 
       tutorials = Tutorial.all
-      render json: tutorials, only: [:name, :description,:category]
+      render json: tutorials, only: [:name, :description,:category, :picture]
 
     end
 
