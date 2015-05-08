@@ -4,7 +4,7 @@ class CreateTutorials < ActiveRecord::Migration
       t.string :name
       t.string :description
       t.string :category
-      
+      t.string :picture 
       t.timestamps null: false
     end
   end
