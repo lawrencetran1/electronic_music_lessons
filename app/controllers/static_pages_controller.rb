@@ -12,8 +12,6 @@ class StaticPagesController < ApplicationController
     # end
     end
 
-    def profile
-    end
 
     def about
     end
