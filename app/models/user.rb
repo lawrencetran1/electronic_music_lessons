@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
 		validates :email, presence: true, uniqueness: { case_sensitive: false }, format: {with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i}
 
 		# Checks if password is between 6 and 20 characters long
-		validates :password, presence: true, length: { in: 6..20 }    
+		validates :password, presence: true, length: { minimum: 6 }    
 
 	def self.from_omniauth(auth)
 		where({:provider => auth['provider'], :uid => auth['uid']}).first_or_initialize.tap do |user|
