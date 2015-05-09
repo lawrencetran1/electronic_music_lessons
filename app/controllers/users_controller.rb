@@ -2,6 +2,10 @@ class UsersController < ApplicationController
 	# If user is logged in, disable all methods except for new and create
 	before_action :require_user, except: [:new, :create]
 
+    def index
+    end
+
+    # Directs users to their profile page.
     def show
         @user = User.find(params[:id])
     end
