@@ -2,6 +2,14 @@ class UsersController < ApplicationController
 	# If user is logged in, disable all methods except for new and create
 	before_action :require_user, except: [:new, :create]
 
+    def index
+    end
+
+    # Directs users to their profile page.
+    def show
+        @user = User.find(params[:id])
+    end
+
 	# Method to create a new user
 	def new
 		@user = User.new
@@ -22,7 +30,7 @@ class UsersController < ApplicationController
       flash[:alert] = @user.errors.full_messages
       render "edit"
     end
-  end	
+  end
 
 	# Creates a new user and redirects to root if successful
 	def create

@@ -8,11 +8,10 @@ class StaticPagesController < ApplicationController
     # when tutorial.category == "keyboards"
     #   puts "keyboard image"
     # else
-    #   puts "default tutorial image" 
+    #   puts "default tutorial image"
     # end
-
-
     end
+
 
     def about
     end

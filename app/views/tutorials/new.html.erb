@@ -1,7 +1,44 @@
-<h1>Create a tutorial</h1>
+<h3>Create a tutorial</h3>
 
-<div class="row">
-    <div>
-        <%= render 'tutorials/tutorial_form' %>
+<div class='container'>
+  <form id= "tutorialForm"action="" method="post">
+    <div class="row">
+
+        <div class="row">
+            <label>Category selection</label>
+                <select class="browser-default">
+                  <option value="" disabled selected>Choose your category</option>
+                  <option value="1">Keyboards</option>
+                  <option value="2">Audio Production</option>
+                  <option value="3">Music Theory</option>
+                  <option value="4">DJ</option>
+                </select>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="name" type="text" class="validate" >
+            <label for="input_text">Lesson Name</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+           <textarea id="textarea1" class="materialize-textarea"></textarea>
+            <label for="textarea1">Lesson Description</label>
+
+                <button id="submit" class="btn waves-effect waves-light" type="submit" name="action">Submit<i class="mdi-content-send right"></i></button>
+
+                <a class="waves-effect waves-light btn">Cancel</a>
+                <!-- The below will show a result if it is added to the database. -->
+                <span id="result"> </span>
+          </div>
+        </div>
+
     </div>
+  </form>
 </div>
+
+
+
+
