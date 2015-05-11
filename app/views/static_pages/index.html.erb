@@ -1,21 +1,18 @@
       
 <div class="row" ng-controller="TutorialsController as app">
   <div class="container" ng-repeat="tutorial in app.tutorials">
-    <div class="col s4">
+    <div class="col l4 m6 s12">
       <div class="card medium">
         <div class="card-image">
-      
-          <%=image_tag('audio_1.jpg')%>
-        
-        
-          <span id="tutorial-name" class="card-title">{{tutorial.name}}</span>
+          <img ng-src="{{tutorial.picture}}">
+          <div id="tutorial-name" class="transparentbox card-title">{{tutorial.name}}</div>
         </div>
         <div class="card-content">
           <p>{{tutorial.description}}</p>
         </div>
         <div class="card-action">
-          <a href="#">Start</a>
-          <a href='#'>Like</a>
+          <a href="#">Start Tutorial</a>
+  
         </div>
       </div>
     </div>

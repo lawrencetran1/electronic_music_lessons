@@ -5,10 +5,10 @@ User.create!([
 ])
 
 Tutorial.create!([
-  {name: "How EQs Work", description: "Here is a quick introduction to equalizers and how to utilize them in your next music production.", category: "Audio Production"},
-  {name: "Synth 101", description: "A synthesizer basics breakdown.", category: "Keyboards"},
-  {name: "Synthesizer Tricks", description: "A few creative tips and tricks for programming synth leads", category: "Keyboards"},
-  {name: "Electronic Music Theory Tricks", description: "An inside look into the basics of rhythmic devices.", category: "Music Theory"},
+  {name: "How EQs Work", description: "Here is a quick introduction to equalizers and how to utilize them in your next music production.", category: "Audio Production", picture: "audio-production.jpg"},
+  {name: "Synth 101", description: "A synthesizer basics breakdown.", category: "Keyboards", picture: "keyboards.jpg"},
+  {name: "Synthesizer Tricks", description: "A few creative tips and tricks for programming synth leads", category: "Keyboards", picture: "keyboards.jpg"},
+  {name: "Electronic Music Theory Tricks", description: "An inside look into the basics of rhythmic devices.", category: "Music Theory", picture: "music-theory.jpg"},
 ])
 
 Lesson.create!([
