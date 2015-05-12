@@ -20,7 +20,7 @@ class TutorialsController < ApplicationController
 
         def create
             @tutorial = Tutorial.new(tutorials_params)
-        if @tutorial.save
+            if @tutorial.save
                 redirect_to tutorials_path
             else
                 render 'new'

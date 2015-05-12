@@ -1,0 +1,16 @@
+<div class="container">
+
+<div class="row">
+	<h3><%= @tutorial.name %></h3>
+	<p>Category: <%= @tutorial.category %></p>
+	<p><%= @tutorial.description %></p>	
+</div>
+
+	<% @tutorial.lessons.each do |x| %>
+		<div class="row">
+			<p><%= x.name %></p>
+			<p>Category: <%= x.category %></p>
+			<p><%= x.body %></p>
+		</div>
+	<% end %>
+</div>
