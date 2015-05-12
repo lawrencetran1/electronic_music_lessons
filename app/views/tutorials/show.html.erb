@@ -1,24 +1,30 @@
 <div class="container" ng-controller="TutorialsController as app">
+  <div class="row"></div> 
   <div class="container">
     <div class="row">
-      <h3 class="bold">{{app.tutorial.name}}</h3>
+      <h4 class= "col s12">{{app.tutorial.name}}</h4>
     </div>
   </div>
 
 
-  <div class="parallex" ng-repeat="lesson in app.lessons">
+  <div class="parallax-container" ng-repeat="lesson in app.lessons">
       
       <div class= "row">      
         <div class="col l6 m6 s12">
         <h6>{{lesson.name}}</h6>
         <p>{{lesson.body}}</p></div>
         <div class="col l6 m6 s12">
-          <div class="circle responsive-img">
-            <img src="http://obiaudio.com/wp-content/uploads/2010/07/frequency_chart_lg.gif" class="responsive-img"></div>
-            </div>
+          <div class="responsive-img">
+            <img class="responsive-img" src="http://obiaudio.com/wp-content/uploads/2010/07/frequency_chart_lg.gif">
           </div>
+        </div>
+        </div>
 
       <div class="row">
+        <div class="col l6 m6 s12"></div>
+        <div class="col l6 m6 s12"></div>
+      </div>
+       <div class="row">
         <div class="col l6 m6 s12"></div>
         <div class="col l6 m6 s12"></div>
       </div>
