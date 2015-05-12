@@ -64,7 +64,7 @@ RSpec.describe User, :type => :model do
     end
 
         it "raises an error without a password" do
-            #Will it raise an error without a password?
+            #Will it raise an error without a password??
         expect{subject.save!}. to raise_error(ActiveRecord::RecordInvalid)
     end
 
