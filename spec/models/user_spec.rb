@@ -51,5 +51,21 @@ RSpec.describe User, :type => :model do
         expect{subject.save!}.to raise_error(ActiveRecord::RecordInvalid)
     end
 
+# The below will test the password_digest.
+
+        it "responds to a password" do
+            #Does the password exist?
+        expect(subject). to respond_to(:password_digest)
+    end
+
+        it "is invalid without an password" do
+            #Can a user be created without a password?
+        expect(subject). to be_invalid
+    end
+
+        it "raises an error without a password" do
+            #Will it raise an error without a password?
+        expect{subject.save!}. to raise_error(ActiveRecord::RecordInvalid)
+    end
 
 end
