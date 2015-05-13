@@ -6,7 +6,7 @@
     TutorialsController.$inject = ['$http','$resource'];
 
     function TutorialsController($http, $resource){
-      // var tutorial = $resource('/api/tutorials/:id',{id:'@id'});
+      var tutorial = $resource('/api/tutorials/:id',{id:'@id'});
       // capture variable
       var self = this;
       // Create a promise - asynchronis
