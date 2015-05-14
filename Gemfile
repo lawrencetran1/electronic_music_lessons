@@ -20,9 +20,10 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-identity'
 gem 'koala'
-
 gem 'materialize-sass'
 gem 'angularjs-rails'
+gem 'angular-rails-templates'
+gem 'active_model_serializers'
 
 group :development, :test do
   gem 'byebug'
