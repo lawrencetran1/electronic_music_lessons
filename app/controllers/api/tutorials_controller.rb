@@ -9,7 +9,7 @@ module Api
       tutorials.each do |t|
         t.picture = view_context.image_path t.picture 
       end
-      render json: tutorials, only: [:name, :description,:category, :picture]
+      render json: tutorials, only: [:name, :description,:category, :picture], root: false
 
     end
 

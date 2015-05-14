@@ -9,7 +9,6 @@
       var tutorial = $resource('/api/tutorials/:id',{id:'@id'});
       // capture variable
       var self = this;
-      self.test = 'sup';
       // Create a promise - asynchronis
       var promise = $http.get('/api/tutorials').
           success(function(data, status, headers, config){
