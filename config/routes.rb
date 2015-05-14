@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get 'faq' => 'static_pages#faq'
   get 'contact' => 'static_pages#contact'
 
-  root 'static_pages#index'
+  root to: 'static_pages#index'
 
   namespace :api do
     resources :tutorials do

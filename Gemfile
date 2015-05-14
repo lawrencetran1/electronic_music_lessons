@@ -25,6 +25,7 @@ gem 'angularjs-rails'
 gem 'angular-rails-templates'
 gem 'active_model_serializers'
 gem 'bower-rails'
+gem 'responders'
 
 group :development, :test do
   gem 'byebug'

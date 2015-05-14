@@ -1,11 +1,11 @@
 (function(){
   angular
-    .module('emlApp',['ngResource'])
+    .module('emlApp')
     .controller('TutorialsController', TutorialsController);
 
-    TutorialsController.$inject = ['$http','$resource'];
+    TutorialsController.$inject = ['$http','$resource','$state'];
 
-    function TutorialsController($http, $resource){
+    function TutorialsController($http, $resource,$state){
       var tutorial = $resource('/api/tutorials/:id',{id:'@id'});
 
       // capture variable

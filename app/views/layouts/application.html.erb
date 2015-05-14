@@ -12,10 +12,13 @@
       <!-- Render navigation bar on all pages -->
       <%= render 'layouts/navigation' %>
     </header>
-
+    
 
     <main role="main">
-       <%= yield %>       
+
+    <div ui-view>  
+    </div>
+        <%= yield %>
     </main>
 
 
