@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="emlApp">
 <head>
   <title>ElectronicMusicLessons</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body ng-app="emlApp">
+<body>
+
     <header>
       <!-- Render navigation bar on all pages -->
       <%= render 'layouts/navigation' %>

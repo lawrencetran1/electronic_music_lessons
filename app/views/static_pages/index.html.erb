@@ -1,6 +1,9 @@
       
 <div class="row" ng-controller="TutorialsController as app">
+{{app.test}}
+  <!-- Repeat this div -->
   <div class="container" ng-repeat="tutorial in app.tutorials">
+  <p>{{tutorial[0].name}}</p>
     <div class="col l4 m6 s12">
       <div class="card medium">
         <div class="card-image">
@@ -12,11 +15,10 @@
         </div>
         <div class="card-action">
           <a href="#">Start Tutorial</a>
-          
         </div>
       </div>
     </div>
-  </div>
+  </div> <!-- End of repeated div -->
 </div>
 <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
   <%= link_to "", new_tutorial_path, class: "btn-floating btn-large waves-effect waves-light red mdi-content-add" %>
