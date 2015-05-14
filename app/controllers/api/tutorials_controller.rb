@@ -4,7 +4,7 @@ module Api
   
   class TutorialsController < ApplicationController
   protect_from_forgery with: :null_session
-
+  respond_to :json
     def index 
       tutorials = Tutorial.all
       tutorials.each do |t|
