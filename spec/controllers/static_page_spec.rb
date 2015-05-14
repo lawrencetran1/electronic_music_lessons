@@ -37,10 +37,10 @@ require "rails_helper"
         expect(response).to have_http_status(200)
      end
 
-    #  it "renders the FAQ page template" do
-    #   get :faq
-    #   expect(response).to render_template(:faq)
-    # end
+     it "renders the FAQ page template" do
+      get :faq
+      expect(response).to render_template(:faq)
+    end
 
 
 
