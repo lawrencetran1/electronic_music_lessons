@@ -11,9 +11,12 @@
 // about supported directives.
 //
 //= require jquery
-//= require materialize-sprockets
 //= require jquery_ujs
+//= require materialize-sprockets
 //= require angular
+//= require angular-rails-templates
+//= require angular-ui-router
 //= require angular-animate
 //= require angular-resource
 //= require_tree .
+//= require_tree ../templates

@@ -1,43 +1,74 @@
+<div class='container' ng-controller="TutorialsController as TutsCtrl">
 
+  <div ng-repeat="tutorial in TutsCtrl.tutorialsArray">
+    <p>{{tutorial}}</p>
+  </div>
 
-<div class='container'>
-  <form id= "tutorialForm"action="" method="post">
-    <div class="row">
+  <div class='container'>
 
-        <div class="row">
-        <h3>Create a tutorial</h3>
-            <label>Category selection</label>
-                <select class="browser-default">
-                  <option value="" disabled selected>Choose your category</option>
-                  <option value="1">Keyboards</option>
-                  <option value="2">Audio Production</option>
-                  <option value="3">Music Theory</option>
-                  <option value="4">DJ</option>
-                </select>
-        </div>
+    <!-- button to add a new lesson -->
+    <button id="submit" class="btn waves-effect waves-light blue right" name="action" ng-click="TutsCtrl.addLesson()" href="#modal1">Add Lesson<i class="mdi-content-send right"></i></button>
 
-        <div class="row">
-          <div class="input-field col s6">
-            <input id="name" type="text" >
-            <label for="input_text">Lesson Name</label>
+    <form id= "tutorialForm" ng-submit="TutsCtrl.addTutorial()">
+      <div class="row">
+
+          <div class="row">
+
+            <h3>Create a tutorial</h3>
+
+            <div id="lessonsDisplay">
+              {{ TutsCtrl.lessons }}
+            </div>
+
+            <label>Tutorial Categories</label>
+            <select class="browser-default" ng-model="TutsCtrl.tutorialCategory">
+              <option value="" disabled selected>Choose a category</option>
+              <option value="Keyboards">Keyboards</option>
+              <option value="Audio Production">Audio Production</option>
+              <option value="Music Theory">Music Theory</option>
+              <option value="DJ">DJ</option>
+            </select>
+
           </div>
-        </div>
 
-        <div class="row">
-          <div class="input-field col s12">
-           <textarea id="textarea1" class="materialize-textarea"></textarea>
-            <label for="textarea1">Lesson Description</label>
-
-                <button id="submit" class="btn waves-effect waves-light" type="submit" name="action">Submit<i class="mdi-content-send right"></i></button>
-
-                <a class="waves-effect waves-light btn">Cancel</a>
-                <!-- The below will show a result if it is added to the database. -->
-                <span id="result"> </span>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="name" type="text" placeholder="Tutorial Name" ng-model="TutsCtrl.tutorialName" />
+            </div>
           </div>
-        </div>
 
-    </div>
-  </form>
+          <div class="row">
+            <div class="input-field col s12">
+
+              <!-- textbox for tutorial description -->
+              <textarea id="tutorial_description" class="materialize-textarea" placeholder="Enter description here" ng-model="TutsCtrl.tutorialDescription"></textarea>
+
+              <!-- append new input box for new lesson -->
+              <fieldset  ng-repeat="lesson in TutsCtrl.lessonsArray">
+                <input type="text" ng-model="lesson.name" name="" placeholder="Enter lesson name">
+                <select class="browser-default" ng-model="lesson.category">
+                  <option value="" disabled selected>Choose a lesson category</option>
+                  <option value="Content">Content</option>
+                  <option value="Video">Video</option>
+                  <option value="Interactive">Interactive</option>
+                </select> 
+                <textarea class="materialize-textarea" placeholder="Enter lesson body here" ng-model="lesson.body"></textarea>            
+                <button class="remove" ng-show="$last" ng-click="TutsCtrl.removeLesson()">-</button>
+              </fieldset>
+
+              <button id="submit" class="btn waves-effect waves-light" type="submit" name="action">Submit<i class="mdi-content-send right"></i></button>
+
+              <a class="waves-effect waves-light btn">Cancel</a>
+
+            </div>
+
+          </div>
+
+      </div>
+    </form>
+
+</div>
+
 </div>
 
 

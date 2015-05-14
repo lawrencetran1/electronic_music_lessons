@@ -24,6 +24,7 @@ gem 'materialize-sass'
 gem 'angularjs-rails'
 gem 'angular-rails-templates'
 gem 'active_model_serializers'
+gem 'bower-rails'
 
 group :development, :test do
   gem 'byebug'
