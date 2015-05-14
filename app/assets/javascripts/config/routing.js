@@ -7,9 +7,9 @@
 		function config($stateProvider, $urlRouterProvider) {
 
 			$stateProvider
-        .state('home', {
+        .state('tutorials', {
           url: '/',
-          templateUrl: 'home.html',
+          templateUrl: 'tutorials.html',
           controller: 'TutorialsController',
           controllerAs: 'app'
         })
@@ -21,11 +21,18 @@
 					controllerAs: 'TutsCtrl'
 				})
 
-        .state('tutorials', {
-          url: '/tutorials/:tutorialId',
+        .state('tutorial', {
+          url: '/tutorials/:id',
           templateUrl: 'tutorial.html',
           controller: 'TutorialsController',
-          controllerAs: 'Tutorial'
+          controllerAs: 'app'
+        })
+
+        .state('piano', {
+          url: '/piano',
+          templateUrl: 'piano.html',
+          controller: 'PianoController',
+          controllerAs: 'piano'
         });
 
       
@@ -33,7 +40,6 @@
         $urlRouterProvider.otherwise('/');
 		  }
  
-
 
 
 })();

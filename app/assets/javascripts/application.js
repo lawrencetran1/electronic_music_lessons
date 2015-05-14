@@ -18,5 +18,6 @@
 //= require angular-ui-router
 //= require angular-animate
 //= require angular-resource
+//= require d3
 //= require_tree .
 //= require_tree ../templates

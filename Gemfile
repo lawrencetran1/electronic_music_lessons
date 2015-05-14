@@ -27,6 +27,7 @@ gem 'active_model_serializers'
 gem 'bower-rails'
 gem 'responders'
 gem 'sprockets', '2.12.3'
+gem 'd3-rails'
 
 group :development, :test do
   gem 'byebug'
