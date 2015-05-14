@@ -24,10 +24,10 @@ require "rails_helper"
         expect(response).to have_http_status(200)
      end
 
-    #  it "renders the About page template" do
-    #   get :about
-    #   expect(response).to render_template(:about)
-    # end
+     it "renders the About page template" do
+      get :about
+      expect(response).to render_template(:about)
+    end
 
 
 
