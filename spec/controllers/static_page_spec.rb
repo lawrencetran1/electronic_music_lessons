@@ -50,10 +50,10 @@ require "rails_helper"
         expect(response).to have_http_status(200)
      end
 
-    #  it "renders the contact page template" do
-    #   get :contact
-    #   expect(response).to render_template(:contact)
-    # end
+     it "renders the contact page template" do
+      get :contact
+      expect(response).to render_template(:contact)
+    end
 
 
  end
