@@ -1,5 +1,10 @@
 (function(){
 
-	angular.module('emlApp', []);
+	angular.module('emlApp', [
+    'ui.router',
+    'ngResource',
+    'templates'
+
+    ]);
 
 })();
