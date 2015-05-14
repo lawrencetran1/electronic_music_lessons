@@ -4,7 +4,7 @@ require "rails_helper"
 
         #Calling the methods - not the routes.
 
-
+# The below will test the  Tutorial method and render the template of the page.
     it "should get the Tutorial app's index page" do
         get :index
         expect(response).to be_success
@@ -17,7 +17,7 @@ require "rails_helper"
     end
 
 
-
+# The below will test the About method and render the template of the page.
     it "should get the About static page" do
         get :about
         expect(response).to be_success
@@ -30,7 +30,7 @@ require "rails_helper"
     end
 
 
-
+# The below will test the FAQ method and render the template of the page.
     it "should get the FAQ static page" do
         get :faq
         expect(response).to be_success
@@ -43,7 +43,7 @@ require "rails_helper"
     end
 
 
-
+# The below will test the Contact method and render the template of the page.
     it "should get the Contact static page" do
         get :contact
         expect(response).to be_success
