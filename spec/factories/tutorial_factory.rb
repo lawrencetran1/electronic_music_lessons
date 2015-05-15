@@ -17,5 +17,13 @@ FactoryGirl.define do
     picture     "  "
   end
 
+  factory :no_description, class: Tutorial do
+    # These set up the attributes, each declaration is a method call.
+    name "Tame the Imagine Dragon"
+    description " "
+    category    "Keyboards"
+    picture     "  "
+  end
+
 end
 
