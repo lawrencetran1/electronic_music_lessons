@@ -24,8 +24,8 @@
         .state('tutorial', {
           url: '/tutorials/:id',
           templateUrl: 'tutorial.html',
-          controller: 'TutorialsController',
-          controllerAs: 'app'
+          controller: 'LessonController',
+          controllerAs: 'lesson'
         })
 
         .state('piano', {

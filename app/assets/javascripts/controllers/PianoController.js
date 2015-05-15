@@ -3,12 +3,11 @@
     .module('emlApp')
     .controller('PianoController', PianoController);
 
-    PianoController.$inject = ['$http','$resource','$state'];
+    PianoController.$inject = ['$resource','$state'];
 
-  function PianoController($http,$resource,$state){
+  function PianoController($resource,$state){
     var self = this;
-      
-    self.test ="hello!";
+  
 
     var width = 900,  
     height = 440,
@@ -94,7 +93,7 @@
         var now = context.currentTime,
             oscillator = context.createOscillator(),
             gain = context.createGain();
-        oscillator.type = "square";
+        oscillator.type = "sine";
         oscillator.frequency.value = d.frequency;
         gain.gain.linearRampToValueAtTime(0, now);
         gain.gain.linearRampToValueAtTime(.4, now + .1);
