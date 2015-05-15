@@ -3,9 +3,9 @@ FactoryGirl.define do
     # We define a factory name, and then we specify the class
     factory :tutorial, class: Tutorial do
     # These set up the attributes, each declaration is a method call.
-    name " "
-    description " "
-    category    " "
+    name " Tame the Imagine Dragon"
+    description "How to Tame your Imagine Dragon "
+    category    "Keyboards"
     picture     "  "
   end
 end
