@@ -10,8 +10,8 @@
       
     self.test ="hello!";
 
-    var width = 960,
-    height = 500,
+    var width = 900,  
+    height = 440,
     outerRadius = (height - 60),
     innerRadius = outerRadius / 2.4;
 
@@ -97,7 +97,7 @@
         oscillator.type = "square";
         oscillator.frequency.value = d.frequency;
         gain.gain.linearRampToValueAtTime(0, now);
-        gain.gain.linearRampToValueAtTime(.6, now + .1);
+        gain.gain.linearRampToValueAtTime(.4, now + .1);
         gain.gain.linearRampToValueAtTime(0, now + 1);
         oscillator.connect(gain);
         gain.connect(context.destination);

@@ -1,6 +1,3 @@
-{{home.test}}
-
-      
 <div class="row" ng-controller="TutorialsController as app">
 
   <!-- Repeat this div -->
@@ -10,6 +7,7 @@
       <div class="card medium">
         <div class="card-image">
           <img ng-src="{{tutorial.picture}}">
+          <p>{{tutorial.picture}}</p>
           <div id="tutorial-name" class="transparentbox card-title">{{tutorial.name}}</div>
         </div>
         <div class="card-content">
@@ -22,4 +20,6 @@
     </div>
   </div> 
 </div>
+
+
   

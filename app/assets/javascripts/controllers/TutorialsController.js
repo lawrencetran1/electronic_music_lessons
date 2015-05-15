@@ -6,7 +6,14 @@
     TutorialsController.$inject = ['$http','$resource','$state'];
 
     function TutorialsController($http, $resource,$state){
-      var tutorial = $resource('/api/tutorials/:id',{id:'@id'});
+      var Tutorial = $resource('/api/tutorials/:id',{id:'@id'});
+     
+      // tutorials = Tutorial.query();
+
+      // tutorials = Tutorial({id: stateParams.id});
+
+      // /api/tutorials/1
+
 
       // capture variable
       var ctrl = this;
