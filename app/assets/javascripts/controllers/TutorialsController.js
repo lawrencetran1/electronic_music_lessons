@@ -5,7 +5,7 @@
 
     TutorialsController.$inject = ['$http','$resource','$state'];
 
-    function TutorialsController($http, $resource,$state){
+    function TutorialsController($http, $resource, $state){
       var tutorial = $resource('/api/tutorials/:id',{id:'@id'});
 
       // capture variable
@@ -58,12 +58,13 @@
           lessons_attributes: ctrl.lessonsArray
 
         }).success(function(response){
-          console.log(response);
+          $state.go('tutorials');
         }).error(function(response){
           console.log(response);
         });
 
         ctrl.lessonsArray = [];
+        $state.go('tutorials');
       };
 
       ctrl.addLesson = function() {
@@ -73,7 +74,7 @@
       ctrl.removeLesson = function() {
         var lastItem = ctrl.lessonsArray.length-1;
         ctrl.lessonsArray.splice(lastItem);
-      };      
+      };  
 
     }
 

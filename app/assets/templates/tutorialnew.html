@@ -1,3 +1,76 @@
-<body>
-<h1>tutorialnew</h1>
-</body>
+<div class='container'>
+
+<!--   <div ng-repeat="tutorial in TutsCtrl.tutorialsArray">
+    <p>{{tutorial}}</p>
+  </div> -->
+
+  <div class='container'>
+
+    <!-- button to add a new lesson -->
+    <button id="submit" class="btn waves-effect waves-light blue right" name="action" ng-click="TutsCtrl.addLesson()" href="#modal1">Add Lesson<i class="mdi-content-send right"></i></button>
+
+    <form id= "tutorialForm" ng-submit="TutsCtrl.addTutorial()">
+      <div class="row">
+
+          <div class="row">
+
+            <h3>Create a tutorial</h3>
+
+            <div id="lessonsDisplay">
+              {{ TutsCtrl.lessons }}
+            </div>
+
+            <label>Tutorial Categories</label>
+            <select class="browser-default" ng-model="TutsCtrl.tutorialCategory">
+              <option value="" disabled selected>Choose a category</option>
+              <option value="Keyboards">Keyboards</option>
+              <option value="Audio Production">Audio Production</option>
+              <option value="Music Theory">Music Theory</option>
+              <option value="DJ">DJ</option>
+            </select>
+
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="name" type="text" placeholder="Tutorial Name" ng-model="TutsCtrl.tutorialName" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+
+              <!-- textbox for tutorial description -->
+              <textarea id="tutorial_description" class="materialize-textarea" placeholder="Enter description here" ng-model="TutsCtrl.tutorialDescription"></textarea>
+
+              <!-- append new input box for new lesson -->
+              <fieldset  ng-repeat="lesson in TutsCtrl.lessonsArray">
+                <input type="text" ng-model="lesson.name" name="" placeholder="Enter lesson name">
+                <select class="browser-default" ng-model="lesson.category">
+                  <option value="" disabled selected>Choose a lesson category</option>
+                  <option value="Content">Content</option>
+                  <option value="Video">Video</option>
+                  <option value="Interactive">Interactive</option>
+                </select> 
+                <textarea class="materialize-textarea" placeholder="Enter lesson body here" ng-model="lesson.body"></textarea>            
+                <button class="remove" ng-show="$last" ng-click="TutsCtrl.removeLesson()">-</button>
+              </fieldset>
+
+              <button id="submit" class="btn waves-effect waves-light" type="submit" name="action">Submit<i class="mdi-content-send right"></i></button>
+
+              <a class="waves-effect waves-light btn">Cancel</a>
+
+            </div>
+
+          </div>
+
+      </div>
+    </form>
+  
+</div>
+
+</div>
+
+
+
+

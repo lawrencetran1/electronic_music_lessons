@@ -21,7 +21,7 @@
         self.tutorial = response.data;
       });
      
-      var lessons = $http.get('/api/tutorials/1').
+      var lessons = $http.get('/api/tutorials/:id',{id:'@id'}).
           success(function(data, status, headers, config){
           return data;  
         });
