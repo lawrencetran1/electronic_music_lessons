@@ -3,10 +3,10 @@
     .module('emlApp')
     .controller('LessonController', LessonController);
 
-    LessonController.$inject = ['$http', '$resource', '$state'];
+    LessonController.$inject = ['$http', '$resource', '$state','$stateParams'];
 
 
-  function LessonController($http,$resource,$state){ 
+  function LessonController($http,$resource,$state, $stateParams){ 
       var self = this;    
       var Tutorial = $resource('/api/tutorials/:id',{id:'@id'});
 
@@ -21,7 +21,7 @@
         self.tutorial = response.data;
       });
      
-      var lessons = $http.get('/api/tutorials/:id',{id:'@id'}).
+      var lessons = $http.get('/api/tutorials/' + $stateParams.id).
           success(function(data, status, headers, config){
           return data;  
         });
