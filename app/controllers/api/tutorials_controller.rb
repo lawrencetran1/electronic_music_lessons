@@ -20,19 +20,19 @@ module Api
     end
 
      def create
-      @tutorial = Tutorial.new(tutorial_params)
-
-      if @tutorial.save
-        render json: @tutorial, status: :created, location: @tutorial
-      else
-        render json: @tutorial.errors, status: :unprocessable_entity
+      
+      @tutorial = Tutorial.create(tutorial_params)
+      @test = params[:lessons_attributes]
+      params[:lessons_attributes].each do |lesson|
+        @tutorial.lessons.create(name: lesson["name"], category: lesson["category"], body: lesson["body"])
       end
+      
     end 
 
    private
 
     def tutorial_params
-      params.require(:tutorial).permit(:name, :description, :category, :picture)
+      params.require(:tutorial).permit(:name, :description, :category, :picture, :lessons_attributes => [:name, :category, :body])
     end   
 
   end
