@@ -1,39 +1,45 @@
 (function(){
 
-	angular
-		.module('emlApp')
-		.config(config);
+  angular
+    .module('emlApp')
+    .config(config);
 
-		function config($stateProvider, $urlRouterProvider) {
+    function config($stateProvider, $urlRouterProvider) {
 
-			$stateProvider
-        .state('home', {
-          url: '/home',
-          templateUrl: 'home.html',
+      $stateProvider
+        .state('tutorials', {
+          url: '/',
+          templateUrl: 'tutorials.html',
           controller: 'TutorialsController',
           controllerAs: 'app'
         })
 
-				.state('tutorials_new', {
-					url: '/tutorials/new',
+        .state('tutorials_new', {
+          url: '/tutorials/new',
           templateUrl: 'tutorialnew.html',
-					controller: 'TutorialsController',
-					controllerAs: 'TutsCtrl'
-				})
-
-        .state('tutorials', {
-          url: '/tutorials/:tutorialId',
-          templateUrl: 'tutorial.html',
           controller: 'TutorialsController',
-          controllerAs: 'Tutorial'
+          controllerAs: 'TutsCtrl'
+        })
+
+        .state('tutorial', {
+          url: '/tutorials/:id',
+          templateUrl: 'tutorial.html',
+          controller: 'LessonController',
+          controllerAs: 'lesson'
+        })
+
+        .state('piano', {
+          url: '/piano',
+          templateUrl: 'piano.html',
+          controller: 'PianoController',
+          controllerAs: 'piano'
         });
 
       
 
         $urlRouterProvider.otherwise('/');
-		  }
+      }
  
-
 
 
 })();
