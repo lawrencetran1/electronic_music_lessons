@@ -1,4 +1,4 @@
-<div class="row" ng-controller="TutorialsController as app">
+<div class="row">
 
   <!-- Repeat this div -->
   <div class="container" ng-repeat="tutorial in app.tutorials">
@@ -13,12 +13,12 @@
           <p>{{tutorial.description}}</p>
         </div>
         <div class="card-action">
-          <a ng-href="tutorials/{{tutorial.id}}">Start Tutorial</a>
+          <a ui-sref="tutorial({id: 'id'})">Start Tutorial</a>
         </div>
       </div>
     </div>
   </div> <!-- End of repeated div -->
 </div>
 <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-  <%= link_to "", new_tutorial_path, class: "btn-floating btn-large waves-effect waves-light red mdi-content-add" %>
+  <a ui-sref="tutorials_new" class="btn-floating btn-large waves-effect waves-light red mdi-content-add"></a> 
 </div>  

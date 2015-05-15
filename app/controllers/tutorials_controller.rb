@@ -18,14 +18,29 @@ class TutorialsController < ApplicationController
 
 
 
+        # def create
+        #     @tutorial = Tutorial.new(tutorials_params)
+        #     if @tutorial.save
+        #         redirect_to tutorials_path
+        #     else
+        #         render 'new'
+        #     end
+        # end
+
         def create
-            @tutorial = Tutorial.new(tutorials_params)
-            if @tutorial.save
-                redirect_to tutorials_path
-            else
-                render 'new'
-            end
-        end
+            tutorial = Tutorial.create(tutorial_params)
+            # @tutorial = Tutorial.new(tutorials_params)
+
+            # params.require(:tutorial).require(:lessons_attributes).permit(:name, :category, :body).each do |lesson_params|
+            #     @tutorial.lessons << Lesson.create(lesson_params)
+            # end
+
+            # if @tutorial.save
+            #     redirect_to tutorials_path
+            # else
+            #     render 'new'
+            # end
+        end        
 
 
 
@@ -55,7 +70,7 @@ class TutorialsController < ApplicationController
 
         private
         def tutorial_params
-            params.require(:tutorial).permit(:name, :description, :category)
+            params.require(:tutorial).permit(:name, :description, :category, lessons_attributes: [:name, :category, :body])
         end
 
 

@@ -19,7 +19,6 @@ $(document).ready(function(){
 
       function(data){
         $.each(data.items,function(i, item){
-          console.log(item);
           videTitle = item.snippet.title;
           videoId = item.id.videoId;
           output = '<li><iframe height ="'+vidHeight+'" width= "'+vidWitdh+'" src=\"//www.youtube.com/embed/'+videoId+'\"</iframe></li>';
