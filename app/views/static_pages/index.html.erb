@@ -1,25 +1,2 @@
-      
-<div class="row" ng-controller="TutorialsController as app">
-
-  <!-- Repeat this div -->
-  <div class="container" ng-repeat="tutorial in app.tutorials">
-
-    <div class="col l4 m6 s12">
-      <div class="card medium">
-        <div class="card-image">
-          <img ng-src="{{tutorial.picture}}">
-          <div id="tutorial-name" class="transparentbox card-title">{{tutorial.name}}</div>
-        </div>
-        <div class="card-content">
-          <p>{{tutorial.description}}</p>
-        </div>
-        <div class="card-action">
-          <a ng-href="tutorials/{{tutorial.id}}">Start Tutorial</a>
-        </div>
-      </div>
-    </div>
-  </div> <!-- End of repeated div -->
+<div ui-view>  
 </div>
-<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-  <%= link_to "", new_tutorial_path, class: "btn-floating btn-large waves-effect waves-light red mdi-content-add" %>
-</div>  
