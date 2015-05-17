@@ -1,6 +1,6 @@
 var vidHeight = 400;
 var vidWitdh = 600;
-var results = 3;
+var results = 1;
 var keyword = "tutorial";
 
 $(document).ready(function(){
