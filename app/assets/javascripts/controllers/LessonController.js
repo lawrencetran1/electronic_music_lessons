@@ -1,37 +1,49 @@
 (function(){
   angular
     .module('emlApp')
+    .run(['$anchorScroll', function($anchorScroll) {
+    $anchorScroll.yOffset = 50;   
+    }])
     .controller('LessonController', LessonController);
 
-    LessonController.$inject = ['$http', '$resource', '$state','$stateParams'];
+
+    LessonController.$inject = ['$http', '$resource', '$state','$stateParams',
+    '$scope','$anchorScroll','$location'];
 
 
-  function LessonController($http,$resource,$state, $stateParams){ 
+  function LessonController($http,$resource,$state, $stateParams, $scope,$anchorScroll,$location){ 
       var self = this;    
       var Tutorial = $resource('/api/tutorials/:id',{id:'@id'});
-
-
-      var tutorial = $http.get('/api/tutorials/').
-          success(function(data, status, headers, config){
-          return data;  
-        });
-
-       tutorial.then(function(response){
-        console.log(response.data);
-        self.tutorial = response.data;
-      });
      
       var lessons = $http.get('/api/tutorials/' + $stateParams.id).
           success(function(data, status, headers, config){
           return data;  
         });
         lessons.then(function(response){
-       
+        self.tutorial = response.data;
         self.lessons = response.data.lessons;
         console.log(self.lessons);
       });
 
-  }      
+        $scope.gotoAnchor = function(x) {
+      var newHash = 'anchor' + x;
+      if ($location.hash() !== newHash) {
+        // set the $location.hash to `newHash` and
+        // $anchorScroll will automatically scroll to it
+        $location.hash('anchor' + x);
+      } else {
+        // call $anchorScroll() explicitly,
+        // since $location.hash hasn't changed
+        $anchorScroll();
+      }
+
+        
+    };
+
+        
+  }
+    
 
 
-})(); 
+})();
+

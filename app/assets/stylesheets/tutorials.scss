@@ -1,3 +1,52 @@
 // Place all the styles related to the tutorials controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.anchor {
+  height: 300px;
+  width:300px;
+  border: 2px solid;
+  padding: 90%;
+}
+
+
+
+#scrollArea {
+  height: 950px;
+ 
+}
+
+
+#next{
+  margin-top: 50%;
+
+}
+
+#fadein{
+
+  opacity: 100;
+  animation-name: fadein;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  -webkit-animation-name: fadein;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: 1;
+}
+
+@-webkit-keyframes fadein{
+    0%{background-color: transparent;
+       position: absolute;
+      opacity: 0;
+      }
+     44%{background-color: transparent;
+      position: absolute;
+      opacity: 50;
+      }
+    100%{background-color: transparent;
+      position: absolute;
+      opacity: 100;
+      }
+
+}
+
+

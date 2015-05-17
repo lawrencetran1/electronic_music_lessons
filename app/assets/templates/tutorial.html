@@ -1,24 +1,44 @@
-<div class="parallax-container" ng-repeat="lesson in lesson.lessons">
-  <div class="slider"> 
-    <div class= "row"> 
-
-      <div class="col l6 m6 s12">
-      <h6>{{lesson.name}}</h6>
-      <p>{{lesson.body}}</p></div>
-      <div class="col l6 m6 s12">
-        <div class="responsive-img">
-          <img class="materialboxed" width="300" src="http://obiaudio.com/wp-content/uploads/2010/07/frequency_chart_lg.gif">
-        </div>
-      </div>
-      </div>
-
-    <div class="row">
-      <div class="col l6 m6 s12"></div>
-      <div class="col l6 m6 s12"></div>
-    </div>
-     <div class="row">
-      <div class="col l6 m6 s12"></div>
-      <div class="col l6 m6 s12"></div>
+<div class="container">
+  <div class="row">
+    <div id="fadein">
+      <h4 class= "col l12 m12 s12">{{lesson.tutorial.name}}</h4>
     </div>
   </div>
 </div>
+<!-- Lesson Section -->
+
+
+
+<div class="parallax-container" ng-repeat="lesson in lesson.lessons" id="anchor{{x}}" class="anchor">
+    <div class="container" id="fadein">  
+    <div class= "row">   
+        <div class="col l6 m6 s12" id="anchor{{x}}">
+          
+            <h6>{{lesson.name}}</h6>
+            <p>{{lesson.body}}</p>
+          </div>  
+        
+          <div class="col l6 m6 s12">
+            <div class="responsive-img">
+              <img class="materialboxed" width="300" src="http://obiaudio.com/wp-content/uploads/2010/07/frequency_chart_lg.gif">
+            </div>
+          </div>
+   
+    </div>
+    </div>
+
+</div>
+
+<!-- Lesson Section End -->
+
+<!-- Scroll to top -->
+<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+  <a href="#" class="btn-floating btn-large waves-effect waves-light red mdi-hardware-keyboard-arrow-up" ng-click="gotoAnchor(x)"></a> 
+</div>
+
+  
+
+        
+
+
+
