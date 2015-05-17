@@ -3,7 +3,7 @@
 A place for digital music enthusiasts to share and collaborate their knowledge.
 
 #### oauth
-- Users can log in with either email, facebook, or google+
+- Users can log in with either email or facebook
 
 #### heroku
 - App will be deployed on Heroku
@@ -17,4 +17,4 @@ A place for digital music enthusiasts to share and collaborate their knowledge.
 #### technologies
 - Rails/Postgres
 - Heroku
-- Javascript/Angular/Bootstrap
+- Javascript/Angular/MaterializeCSS
