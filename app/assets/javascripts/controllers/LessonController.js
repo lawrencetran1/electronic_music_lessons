@@ -7,11 +7,10 @@
     .controller('LessonController', LessonController);
 
 
-    LessonController.$inject = ['$http', '$resource', '$state','$stateParams',
-    '$scope','$anchorScroll','$location'];
+    LessonController.$inject = ['$http', '$resource', '$state', '$stateParams', '$scope', '$anchorScroll', '$location', '$timeout'];
 
 
-  function LessonController($http,$resource,$state, $stateParams, $scope,$anchorScroll,$location){ 
+  function LessonController($http, $resource, $state, $stateParams, $scope, $anchorScroll, $location, $timeout){ 
       var self = this;    
       var Tutorial = $resource('/api/tutorials/:id',{id:'@id'});
      
@@ -22,6 +21,10 @@
         lessons.then(function(response){
         self.tutorial = response.data;
         self.lessons = response.data.lessons;
+        // must wait to init collapsible
+        $timeout(function(){
+                $('.collapsible').collapsible({});
+            },500);        
         console.log(self.lessons);
       });
 
@@ -31,9 +34,8 @@
           $location.hash('anchor' + x);
         } else {
           $anchorScroll();
-      }        
-    
-    };        
+        }
+      };
   }
     
 })();

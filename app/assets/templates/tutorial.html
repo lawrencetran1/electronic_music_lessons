@@ -1,44 +1,23 @@
 <div class="container">
-  <div class="row">
-    <div id="fadein">
-      <h4 class= "col l12 m12 s12">{{lesson.tutorial.name}}</h4>
-    </div>
-  </div>
-</div>
-<!-- Lesson Section -->
-
-<div class="parallax-container" ng-repeat="lesson in lesson.lessons" id="anchor{{x}}" class="anchor">
-    <div class="container" id="fadein">  
-      <div class= "row">   
-        <div class="col l6 m6 s12" id="anchor{{x}}">          
-            <h6>{{lesson.name}}</h6>
-            <p>{{lesson.body}}</p>
-          </div>          
+  <h3>{{lesson.tutorial.name}}</h3>
+  <h5>{{lesson.tutorial.category}}</h5>
+  <ul class="collapsible" data-collapsible="accordion">
+      <li ng-repeat="lesson in lesson.lessons">
+        <div class="collapsible-header"><i class="mdi-image-filter-drama"></i>{{lesson.name}}</div>
+        <div class="collapsible-body">
+          <p>{{lesson.body}}</p>
           <div class="col l6 m6 s12">
-            <div class="responsive-img">
+            <div class="responsive-img center">
               <img class="materialboxed" width="300" src="http://obiaudio.com/wp-content/uploads/2010/07/frequency_chart_lg.gif">
             </div>
-          </div>
-   
-      </div>
-    </div>
-
-</div>
-
-<!-- Lesson Section End -->
-
-<!-- Scroll to top -->
-<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-  <a href="#" class="btn-floating btn-large waves-effect waves-light red mdi-hardware-keyboard-arrow-up" ng-click="gotoAnchor(x)"></a> 
-</div>
-
-<div class="row">
-
-  <h3>Youtube video lesson</h3>
-  <p>Channel: https://www.youtube.com/user/NativeInstruments</p>
-  <p>Keyword: Tutorial</p>
-  <p>(refresh if video does not load)</p>
-  <ul id="results">
-  </ul>
-
+          </div>          
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header"><i class="mdi-maps-place"></i>Youtube video lesson</div>
+        <div class="collapsible-body center">
+          <ul id="results"></ul>  
+        </div>
+    </li>
+    </ul>  
 </div>
