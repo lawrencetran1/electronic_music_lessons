@@ -21,7 +21,7 @@
         });
         lessons.then(function(response){
         self.tutorial = response.data;
-        keyword = response.data.category;
+        keyword = response.data.name;
         self.lessons = response.data.lessons;
         // must wait to init collapsible
         $timeout(function(){
@@ -29,14 +29,19 @@
             },500);
       });
 
-      var youtube = $http.get('https://www.googleapis.com/youtube/v3/search?order=viewCount&part=snippet&q=dj&channelId=UCwjiBFz7LuxYvmIRw5kChFA&maxResults=1&key=AIzaSyC3N_wXv7GRGU2ZPViN3PNW8W9_FyzOtBY')
-        .success(function(data){
-          return data;
-        });
-        youtube.then(function(response){
-          self.videoId = response.data.items[0].id.videoId;
-          $scope.movie = {src:"https://www.youtube.com/embed/"+response.data.items[0].id.videoId};
-        });
+      $timeout(function(){
+        keyword = keyword.toLowerCase().split(' ').join('+');
+        var youtube = $http.get('https://www.googleapis.com/youtube/v3/search?order=viewCount&part=snippet&q='+keyword+'&maxResults=1&key=AIzaSyC3N_wXv7GRGU2ZPViN3PNW8W9_FyzOtBY')
+          .success(function(data){
+            return data;
+          });
+          youtube.then(function(response){
+            self.videoId = response.data.items[0].id.videoId;
+            $scope.movie = {src:"https://www.youtube.com/embed/"+response.data.items[0].id.videoId};
+          });  
+      },500);
+
+      
 
       $scope.trustSrc = function(src) {
         return $sce.trustAsResourceUrl(src);
