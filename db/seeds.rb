@@ -44,7 +44,7 @@ Lesson.create!([
   {name: "Section Five", category:"content", body: "Poly-rhythm is the term use to define the occurrence of two or more conflicting rhythms sounding simultaneously",  
     picture: "Polyrhythm.jpg", tutorial_id: 4}, 
   {name: "Section Six", category:"content", body: "Cross-rhythm is a polyrhythm that occurs in a longer span of time, not only conflicting against another rhythm, but also against the given meter of the music",  
-    picture: "Cross-rhythm", tutorial_id: 4},
+    picture: "Cross-rhythm.jpg", tutorial_id: 4},
   {name: "Section Seven", category:"content", body: "Sesquialtera is a term for the occurrence of a triple rhythm and a duple rhythm sounding simultaneously. Again, this is a type of polyrhythm but can exist in a short or long span of time, and it can be seen in my above example highlighted in yellow",  
     picture: "Sesquialtera.jpg", tutorial_id: 4},
   {name: "Section Eight", category:"content", body: "Linear Drumming is where a core unit of sounds refrain from sounding simultaneously",  
