@@ -16,6 +16,9 @@ module Api
 
     def show
       tutorial = Tutorial.find(params[:id])
+      tutorial.lessons.each do |t|
+        t.picture = view_context.image_path t.picture
+      end
       render json: tutorial, except: [:created_at, :updated_at], :include => :lessons
     end
 
