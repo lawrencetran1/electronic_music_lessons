@@ -42,16 +42,16 @@
         return $sce.trustAsResourceUrl(src);
       };
       
-      self.audio_a = new Audio('a.ogg');
-      self.audio_s = new Audio('d.ogg');
-      self.audio_d = new Audio('s.ogg');
-      self.audio_f = new Audio('f.ogg');
-      self.audio_g = new Audio('g.ogg');
-      self.audio_h = new Audio('h.ogg');
-      self.audio_j = new Audio('j.ogg');
-      self.audio_k = new Audio('k.ogg');
-      self.audio_l = new Audio('l.ogg');
-      self.audio_semicolon = new Audio(';.ogg');
+      self.audio_a = new Audio('audio/keyboard_c.mp3');
+      self.audio_s = new Audio('audio/keyboard_d.mp3');
+      self.audio_d = new Audio('audio/keyboard_e.mp3');
+      self.audio_f = new Audio('audio/keyboard_f.mp3');
+      self.audio_g = new Audio('audio/keyboard_g.mp3');
+      self.audio_h = new Audio('audio/keyboard_a.mp3');
+      self.audio_j = new Audio('audio/keyboard_b.mp3');
+      self.audio_k = new Audio('audio/keyboard_c2.mp3');
+      self.audio_l = new Audio('audio/keyboard_d2.mp3');
+      self.audio_semicolon = new Audio('audio/keyboard_e2.mp3');
 
       self.keyboard = [
         {key: 'a'},
