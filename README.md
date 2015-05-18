@@ -7,6 +7,7 @@ A place for digital music enthusiasts to share and collaborate their knowledge.
 
 #### heroku
 - App will be deployed on Heroku
+- https://emusiclessons.herokuapp.com
 
 #### functionality
 - Users will be able to create tutorials

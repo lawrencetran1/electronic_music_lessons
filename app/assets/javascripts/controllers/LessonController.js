@@ -35,7 +35,7 @@
         });
         youtube.then(function(response){
           self.videoId = response.data.items[0].id.videoId;
-          $scope.movie = {src:"http://www.youtube.com/embed/"+response.data.items[0].id.videoId};
+          $scope.movie = {src:"https://www.youtube.com/embed/"+response.data.items[0].id.videoId};
         });
 
       $scope.trustSrc = function(src) {
