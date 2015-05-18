@@ -37,7 +37,7 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 		if @user.save
 			session[:user_id] = @user.id.to_s
-			redirect_to '/'
+			redirect_to index_path
 		else
 			# Error messages if user tries to create a new user that does not pass validations
 			flash[:alert] = @user.errors.full_messages

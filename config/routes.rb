@@ -11,8 +11,9 @@ Rails.application.routes.draw do
   get 'about' => 'static_pages#about'
   get 'faq' => 'static_pages#faq'
   get 'contact' => 'static_pages#contact'
+  get 'index' => 'static_pages#index'
 
-  root to: 'static_pages#index'
+  root to: 'static_pages#home'
 
   namespace :api do
     resources :tutorials do
