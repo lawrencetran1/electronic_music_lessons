@@ -46,3 +46,17 @@
       }
 
 }
+
+.keyboard {
+  width: 50px;
+  height: 200px;
+  float: left;
+  display: inline-block;
+  border: 1px solid black;
+  background: white;
+  margin-bottom: 20px;
+}
+
+.key {
+  height: 199px;
+}
