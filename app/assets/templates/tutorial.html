@@ -16,8 +16,25 @@
       <li>
         <div class="collapsible-header"><i class="mdi-maps-place"></i>Youtube video lesson</div>
         <div class="collapsible-body center">
-          <ul id="results"></ul>  
+          <iframe height="550" width="800" ng-src="{{trustSrc(movie.src)}}"></iframe>
         </div>
     </li>
+      <li>
+        <div class="collapsible-header"><i class="mdi-image-straighten"></i>Digital Keyboard</div>
+        <div class="collapsible-body center">
+          <div class="row"></div>
+          <div class="row">
+          <div class="container">
+            <div class="center" ng-keydown="lesson.tester($event)" tabindex="1">
+                <div class="keyboard center" ng-repeat="keyboard in lesson.keyboard">
+                  <div class="key" ng-click="keyboard.play()">{{keyboard.key}}</div>
+                </div>
+            </div>  
+          </div>            
+          </div>
+
+        </div>
+    </li>    
     </ul>  
 </div>
+ 

@@ -23,15 +23,3 @@
 <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
   <a ui-sref="tutorials_new" class="btn-floating btn-large waves-effect waves-light red mdi-content-add"></a> 
 </div>
-<div class="fixed-action-btn" style="bottom: 45px; left: 24px;">
-  <a href="#modal3" class="btn-floating btn-large waves-effect waves-light blue mdi-image-straighten modal-trigger"></a> 
-</div>  
-
-<div id="modal3" class="modal bottom-sheet" ng-keydown="app.tester($event)" tabindex="1">
-  <div class="modal-content">
-    <h4>Digital Keyboard</h4>
-    <div class="keyboard center" ng-repeat="keyboard in app.keyboard">
-      <div class="key" ng-click="keyboard.play()">{{keyboard.key}}</div>
-    </div>
-  </div>
-</div>
